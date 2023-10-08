@@ -26,5 +26,5 @@ const updateFeedbackData = function (e) {
   localStorage.setItem(FEEDBACK_DATA, JSON.stringify(feedbackData));
 };
 
-form.addEventListener('input', updateFeedbackData);
+form.addEventListener('input', throttle(updateFeedbackData, 500));
 form.addEventListener('submit', onSubmit);
